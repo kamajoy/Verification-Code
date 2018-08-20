@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- <script src="js/second.js"></script> -->
+  <style>
+    .webSc {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 1000px;
+      height: 500px;
+      border: solid 1px #d8dae2;
+      background-color: #ffffff;
+    }
+
+    .webSc-top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      line-height: 60px;
+      /* padding: 0 1px; */
+      box-sizing: border-box;
+    }
+
+    .top section {
+      text-align: center;
+      line-height: 60px;
+      font-size: 18px;
+      color: #000;
+    }
+
+    .dx_yz {
+      width: 50%;
+      height: 60px;
+      background-color: #e4e5e8;
+      cursor: pointer;
+      /* border-top: solid 1px #d8dae2; */
+    }
+
+    .active {
+      color: #5490ff !important;
+      border-bottom: 1px solid #5490ff;
+      background-color: #ffffff !important;
+    }
+
+    .td_yz {
+      width: 50%;
+      height: 60px;
+      background-color: #e4e5e8;
+      cursor: pointer;
+      /* border-top: solid 1px #d8dae2; */
+    }
+
+    .username {
+      margin: 115px auto 30px;
+      width: 350px;
+      height: 42px;
+      color: #59607c;
+      border-radius: 2px;
+      border: solid 1px #d2d5dc;
+    }
+
+    .icon {
+      float: left;
+      width: 90px;
+      height: 100%;
+      font-size: 14px;
+      color: #59607c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-right: 1px solid #d8dae2;
+    }
+    .name {
+      float: left;
+      width: 258px;
+      height: 100%;
+      font-size: 18px;
+      line-height: 42px;
+      padding-left: 18px;
+      box-sizing: border-box;
+      /* flex-direction: row; */
+    }
+
+    .code {
+      width: 350px;
+      height: 42px;
+      margin: 0 auto 36px;
+    }
+
+    .yzm {
+      float: left;
+      width: 230px;
+      height: 42px;
+      border-radius: 2px;
+      border: solid 1px #d2d5dc;
+    }
+
+    .micon {
+      float: right;
+      width: 109px;
+      height: 42px;
+      border-radius: 2px;
+      border: solid 1px #d2d5dc;
+    }
+
+    .yzm_icon {
+      float: left;
+      width: 90px;
+      height: 100%;
+      color: #59607c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-right: 1px solid #d8dae2;
+    }
+
+    .yzm_txt {
+      margin-left: 17px;
+      float: left;
+      font-family: MicrosoftYaHei;
+      font-size: 14px;
+      line-height: 42px;
+      color: #333b44;
+      opacity: 0.5;
+    }
+
+    .micon {
+      font-family: MicrosoftYaHei;
+      font-size: 14px;
+      line-height: 42px;
+      text-align: center;
+      color: #84899f;
+    }
+
+    .submit {
+      display: block;
+      box-shadow: none;
+      border: none;
+      margin: 0 auto;
+      width: 350px;
+      height: 38px;
+      line-height: 38px;
+      font-size: 14px;
+      text-align: center;
+      color: #fff;
+      background-color: #4d84ff;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+    .isShow{
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="webSc">
+    <div class="webSc-top">
+      <section class="dx_yz active">点选验证</section>
+      <section class="td_yz">拖动验证</section>
+    </div>
+    <div class="body">
+      <div class="username">
+        <div class="icon">
+          <span class="img"></span>账号
+        </div>
+        <div class="name">13266532263</div>
+      </div>
+      <div class="code">
+        <div class="yzm">
+          <div class="yzm_icon">验证码</div>
+          <div class="yzm_txt">6位验证码</div>
+        </div>
+        <div class="micon">获取验证码</div>
+      </div>
+      <button class="submit dx" id="TCaptchaDx" data-type-verify="word">登录</button>
+      <button class="submit td isShow" id="TCaptchaTd" data-type-verify="slide">登录</button>
+    </div>
+  </div>
+  <script>
+    var dxBtn = document.getElementsByClassName('dx')[0]
+    var tdBtn = document.getElementsByClassName('td')[0]
+    var dx = document.getElementsByClassName('dx_yz')[0]
+    var td = document.getElementsByClassName('td_yz')[0]
+    dx.onclick = function () {
+      this.classList.add('active')
+      td.classList.remove('active')
+      tdBtn.classList.add('isShow')
+      dxBtn.classList.remove('isShow')
+    }
+    td.onclick = function () {
+      this.classList.add('active')
+      dx.classList.remove('active')
+      tdBtn.classList.remove('isShow')
+      dxBtn.classList.add('isShow')
+    }
+  </script>
+  <script src="js/dx.js"></script>
+  <script src="js/slide.js"></script>
+</body>
+
+</html>

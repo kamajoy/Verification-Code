@@ -1,1 +1,3 @@
-# Verification-Code
+# 拖拽验证码
+
+## 目前只有前端验证，server未做校验
